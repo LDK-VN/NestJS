@@ -49,25 +49,6 @@
     * Kết hợp function vào 1 program khó -> tuân theo pattern giống nhau -> nếu ko dễ xảy ra lỗi
     * Đi kèm với toán học nâng cao
     * Nắm vững đệ quy.
-    
-5. Cấu trúc
-   
-      2 ├── README.md
-      3 ├── nest-cli.json
-      4 ├── package.json
-      5 ├── src
-      6 │   ├── app.controller.spec.ts
-      7 │   ├── app.controller.ts
-      8 │   ├── app.module.ts
-      9 │   ├── app.service.ts
-     10 │   └── main.ts
-     11 ├── test
-     12 │   ├── app.e2e-spec.ts
-     13 │   └── jest-e2e.json
-     14 ├── tsconfig.build.json
-     15 ├── tsconfig.json
-     16 ├── tslint.json
-     17 └── yarn.lock
      
 5. Dependency injection 
     1. Dependency
