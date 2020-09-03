@@ -26,8 +26,8 @@
 
 ### Installation
 Xấy dựng bằng [Nest CLI][nest-cli] hoặc clone một dự án khởi đầu
-    * Nest-CLI
 
+* Nest-CLI
 ```
 $npm i -g @nestjs/cli
 $nest new project-name
