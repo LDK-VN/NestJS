@@ -12,7 +12,7 @@ NestJS
 2. Nó làm được gì?
     * Kiến trúc out-of-the-box -> Mở rộng, dễ maintain, … -> Lấy từ Angular
 
-3. NestJS có gì?
+3. NestJS có những gì?
     * Design pattern -> Dependency Injection
     * Cú pháp giống Angular
     * Nhiều module support như hot reload, logger, GraphQL, Websocket, cqrs pattern, microservices,…
