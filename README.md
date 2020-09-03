@@ -25,7 +25,13 @@
 * Nhiều module support như hot reload, logger, GraphQL, Websocket, cqrs pattern, microservices,…
 
 ### Installation
-* Xấy dựng bằng [Nest CLI][nest-cli]
+Xấy dựng bằng [Nest CLI][nest-cli] hoặc clone một dự án khởi đầu
+    * Nest-CLI
+
+```
+    $npm i -g @nestjs/cli
+    $nest new project-name
+```
 
 
 [nest-cli]: https://docs.nestjs.com/cli/overview
