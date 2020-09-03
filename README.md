@@ -29,8 +29,8 @@ Xấy dựng bằng [Nest CLI][nest-cli] hoặc clone một dự án khởi đ�
     * Nest-CLI
 
 ```
-    $npm i -g @nestjs/cli
-    $nest new project-name
+   $npm i -g @nestjs/cli
+   $nest new project-name
 ```
 
 
