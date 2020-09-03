@@ -5,8 +5,6 @@
 ## Tài liệu tham khảo
 * https://docs.nestjs.com/
 * https://www.merixstudio.com/blog/nestjs-how-and-why-use-it/
-* https://viblo.asia/p/dependency-injection-la-gi-va-khi-nao-thi-nen-su-dung-no-LzD5d0d05jY
-* https://www.codehub.com.vn/Tim-Hieu-Ve-Dependency-Injection-Qua-Vi-Du-Cu-The
 
 ## NestJS
 1. NestJS là gì?
