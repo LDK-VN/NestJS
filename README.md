@@ -1,4 +1,7 @@
 # NestJS
+   
+   ![NestJS](https://github.com/LDK-VN/NestJS/blob/master/Resource/logo.png)
+
 ## Tham khảo
 * https://docs.nestjs.com/
 * https://www.merixstudio.com/blog/nestjs-how-and-why-use-it/
