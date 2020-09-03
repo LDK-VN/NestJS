@@ -48,7 +48,7 @@ NestJS
 5. Dependency injection 
     1. Dependency
         * Class A -> sử dụng chức năng của class B
-          2. Có 3 loại:
+    2. Có 3 loại:
         * Contructor injection: các depency đk cung cấp thông qua constructor của class.
         * Setter injection: client tạo ra một setter method để class khác có thể sử dụng chúng để cấp dependency
         * Interface injection: dependency cung cập một hàm injector để inject nó vào bất kì client nào dk truyền vào. Các client phải implement một interface mà có một setter method dành cho việc nhận dependency.
