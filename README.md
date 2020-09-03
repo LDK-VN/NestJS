@@ -2,7 +2,7 @@
    
    ![NestJS](https://github.com/LDK-VN/NestJS/blob/master/Resource/logo.png)
 
-## Tham khảo
+## Tài liệu tham khảo
 * https://docs.nestjs.com/
 * https://www.merixstudio.com/blog/nestjs-how-and-why-use-it/
 * https://viblo.asia/p/dependency-injection-la-gi-va-khi-nao-thi-nen-su-dung-no-LzD5d0d05jY
