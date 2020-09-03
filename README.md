@@ -9,7 +9,8 @@ NestJS
         * Express (default)
         * Fastify
 
-2. Nó làm được gì?
+2. Tại sao nên sử dụng?
+    * Giải quyết được vấn đề về structuring
     * Kiến trúc out-of-the-box -> Mở rộng, dễ maintain, … -> Lấy từ Angular
 
 3. NestJS có những gì?
