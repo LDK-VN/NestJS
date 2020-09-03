@@ -2,10 +2,10 @@
 
 NestJS
 1. NestJS là gì?
-    1.  Là framework để xấy dựng các ứng dụng server-side bằng nodeJS.
-    2. Sử dụng Typescript
-    3. OOP, FR(Functional Programming), FRP(Functional Reactive Programming).
-    4. Sử dụng HTTP servers framework
+    *  Là framework để xấy dựng các ứng dụng server-side bằng nodeJS.
+    * Sử dụng Typescript
+    * OOP, FR(Functional Programming), FRP(Functional Reactive Programming).
+    * Sử dụng HTTP servers framework
         * Express (default)
         * Fastify
 
