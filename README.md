@@ -11,8 +11,8 @@
 * Sử dụng Typescript(default), có thể sử dụng cả Pure Javascript.
 * OOP, FR(Functional Programming), FRP(Functional Reactive Programming).
 * Sử dụng HTTP servers framework
-* Express (default)
-* Fastify
+   * Express (default)
+   * Fastify
 
 ### Tại sao nên sử dụng?
 * Giải quyết được vấn đề về structuring
