@@ -1,5 +1,5 @@
 # NestJS
-   ![NestJS](https://github.com/LDK-VN/NestJS/blob/master/Resource/logo.png)
+   ![NestJS](https://github.com/LDK-VN/NestJS/blob/master/Resource/image/logo.png)
 
 ## Tài liệu tham khảo
 * https://docs.nestjs.com/
