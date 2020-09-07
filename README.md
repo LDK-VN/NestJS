@@ -58,3 +58,10 @@ $ npm i --save @nestjs/core @nestjs/common rxjs reflect-metadata
 ```
 
 [nest-cli]: https://docs.nestjs.com/cli/overview
+
+### Running the application
+
+* Lệnh khởi đọng application với HTTP server listen port được xác định dong src/main.ts -> browser input http://localhost:3000/
+```bash
+npm run start
+```

@@ -1,43 +1,66 @@
 # First steps
-[TypeScript]()
-## Ngôn ngữ
 
-* Typescript
+## Language
+
+* TypeScript (default)
 * Javascript
 
+## Setup
 
+Tạo new project với Nest CLI
 
-## What is TypeScript
-
-* Một biến thể của Javascript
-
-## A static type checker (Trình kiểm tra loại tĩnh)
-
-* Phát hiện lỗi, lỗi nào không dựa trên -> loại giá trị đang run -> static type checker (Kiểm tra kiểu tĩnh)
-* Check lỗi program -> trước exe -> dự trên loại giá trị
-
-```
-const obj = { width: 10, height: 15 };
-const area = obj.width * obj.heigth;
-Property 'heigth' does not exist on type '{ width: number; height: number; }'. Did you mean 'height'?
+```bash
+$ npm i -g @nest/cli
+$ nest new project-name
 ```
 
-### Syntax (Cú pháp)
-* TS là superset JS -> syntax JS là TS hợp pháp.
-* Đề cập -> cách viết văn bản => program
-* Không xem bât kỳ mã JS -> lỗi cú pháp
+Tổng quát về các tệp cốt lõi
 
-### Types (Các loại)
-* Typed superset -> thêm quy tắc -> sử dụng các loại giá trị khác nhau
-* Type cheker -> cho phép chương trình chính xác đi quá -> bắt được nhiều lỗi phổ biến nhất có thể
-* Chuyển mã JS->TS => type errors
+```
+app.controller.ts | Basic controoler sample with a single route
+app.module.ts     | The root module of the application.
+main.ts           | The entry file of the application which uses the core function NestFactory to create a Nest application instance.
+```
+**main.ts** bao gồm một function async -> bootstrap out of application
 
-### Runtime behavior ( Hành vi thời gian chạy)
-* Không thay đổi runtime behavior của javascript
-* Dễ chuyển đổi 2 ngông ngữ -> ko lo khiến chương trình ngừng hoạt động
+Tạo Nest application instance -> using core NestFactory class -> hiển thị vài method static -> tạo một application instance
+method `create()` return application object, đáp ứng các INestApplication interface
 
-### Erased Types (Các loại đã xoá)
-* Type checker done -> xoá type => compiled code (Pure JS không có thông tin loại)
-* Typescript không thay đổi hành vi chương trình dựa vào types -> Có lỗi type -> không liên quan tới cách chương trình hoạt động khi nó chạy
+Start Http listener -> chophesp ứng dụng chờ gửi yêu cầu HTTP gửi đến
+```ts
+import { NestFactory } from '@nestjs/core';
+import { AppMoule } from './app.module';
 
+async function bootstrap() {
+    const app = await NestFactory.create(AppModule);
+    await app.listen(3000);
+}
+bootstrap();
+```
 
+## Platform
+
+Nest -> mục tiêu platform-agnostic framework => Platform độc lập giúp tạo các phần logic có thể tái sử dụng -> developer có thể tận dụng trên một số loại ứng dụng khác nhau
+
+Nest -> tạo adapter -> hoạt động với bất kỳ Node HTTP framework
+
+Có 2 platform support out-of-the-box: express and fastify.
+
+```
+platform-express | Express là một framework tối giản web cho node. Là 1 sản xuất với nhiều tài nguyên do cộng đồng thực hiện. `@nestjs/platform-express` package used default.
+
+platform-fastify | Fastify hiệu suất cao, chỉ phí tập -> focus hiệu quả + tốc độ
+```
+
+Intance tương ứng
+* Express: NestExpressApplication
+* Fastify: NestFastifyApplication
+
+Với nền tảng khác nhau -> method sẽ khác nhau
+```ts
+// Express
+const app = await NestFactory.create<NestExpressApplication>(AppModule);
+
+// Fastify
+const app = await NestFactory.create<NestFastifyApplication>(AppModule);
+```
