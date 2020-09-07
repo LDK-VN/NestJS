@@ -11,8 +11,8 @@
 * Sử dụng Typescript(default), có thể sử dụng cả Pure Javascript.
 * OOP, FR(Functional Programming), FRP(Functional Reactive Programming).
 * Sử dụng HTTP servers framework
-* Express (default)
-* Fastify
+   * Express (default)
+   * Fastify
 
 ### Tại sao nên sử dụng?
 * Giải quyết được vấn đề về structuring
@@ -27,13 +27,15 @@
 Xấy dựng bằng [Nest CLI][nest-cli] hoặc clone một dự án khởi đầu
 
 * Nest-CLI
-```
+
+```bash
 $npm i -g @nestjs/cli
 $nest new project-name
 ```
 
 * Typescript starter project with **Git**:
-```
+
+```bash
 $ git clone clone https://github.com/nestjs/typescript-starter.git project
 $ cd project
 $ npm install
@@ -41,7 +43,8 @@ $ npm run start
 ```
 
 * Javascript starter project with **Git**:
-```
+
+```bash
 $ git clone clone https://github.com/nestjs/javascript-starter.git project
 $ cd project
 $ npm install
@@ -49,7 +52,8 @@ $ npm run start
 ```
 
 Tạo dự án mới từ đầu, tự tạo các project boilerplate files (Tệp file mẫu).
-```
+
+```bash
 $ npm i --save @nestjs/core @nestjs/common rxjs reflect-metadata
 ```
 
