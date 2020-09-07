@@ -64,3 +64,10 @@ const app = await NestFactory.create<NestExpressApplication>(AppModule);
 // Fastify
 const app = await NestFactory.create<NestFastifyApplication>(AppModule);
 ```
+
+### Running the application
+
+* Lệnh khởi đọng application với HTTP server listen port được xác định dong src/main.ts -> browser input http://localhost:3000/
+```bash
+npm run start
+```
