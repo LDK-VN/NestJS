@@ -5,7 +5,7 @@ Dùng để inject dependencies -> các obj có thể toạ nhiều quan hệ ->
 Provider đơn giản là class + @Ijnectable decorator
 
 <p align="center">
-  <a href="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/Components_1.png" target="blank"><img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/Components_1.png" width="320" alt="Nest Logo" /></a>
+  <a href="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/Components_1.png" target="blank"><img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/Components_1.png" width="640" alt="Nest Logo" /></a>
 </p>
 
 ## Services
