@@ -27,7 +27,7 @@ export class CatsController {
 ;    }
 }
 ```
-+HINT
+
 ```
-Create a controller using the CLI -> `+@nest g controller cats`
+Create a controller using the CLI -> `@nest g controller cats`
 ```
