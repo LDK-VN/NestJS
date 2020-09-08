@@ -198,5 +198,184 @@ findOne(@Param() params): string {
 ```
 Import Param from the @nestjs/common package.
 ```
+
+Chuyển mã thông số cụ thể vào decorator -> tham chiếu trực tiếp route parameter trong method body.
+```ts
+@Get(':id')
+findOne(@Param('id') id): string {
+  return `This action returns a #${id} cat`;
+}
+```
+
+## Sub-Domain Routing
+
+The **@Controller** decorator -> có thể có một host option yêu cầu HTTP của các request phải khớp với một số giá trị cụ thể.
+```ts
+@Controller({ host: 'admin.example.com' })
+export class AdminController {
+  @Get()
+  index(): string {
+    return 'Admin page';
+  }
+}
+```
+```
+WARNING
+Since Fastify lacks support for nested routers, when using sub-domain routing, the (default) Express adapter should be used instead.
+```
+
+hosts option -> bắt dynamic value -> in host name -> use @HostParam() decorator
+```ts
+@Controller({ host: ':account.example.com' })
+export class AccountController {
+  @Get()
+  getInfo(@HostParam('account') account: string) {
+    return account;
+  }
+}
+```
+
+## Scopes
+
+[Here][scope]
+
+## Asynchronicity
+
+Learn more about async / await feature [here][async]
+
+async function -> Promise
+
+```ts
+// cat.controller.ts
+
+@Get()
+async findAll(): Promise<any[]> {
+    return [];
+}
+```
+
+
+Nest có thể -> return [observable streams][ovservable-streams] RxJS. Nest automatically subscribe and take the last emitted value (giá trị phát ra cuối cùng)
+```ts
+@Get()
+findAll(): Observable<any[]> {
+  return of([]);
+}
+```
+
+Dùng 1 trong 2 cách tuỳ thuộc vào nhu cầu.
+
+## Request payloads
+
+Sử dụng **@Body** decoratorr
+DTO schema (Đối tượng truyền dữ liệu) -> xác định cách dữ liệu được gửi qua mạng. Xác định DTO schema -> use TypeScript interface, class.
+Nên sử dụng class -> class thuộc ES6 nên khi JS compiple -> giữ nguyên. TypeScript interface bị bỏ khi trannspilation => Nest không thể thâm chiếu đên chúng trong runtime.
+Vì các tính năng như **Pipes** cho phép bổ khi chúng có quền truy cập metatype của biến trong runtime.
+
+Create class **CreateCatDto** 
+```ts
+// create-cat.dto.ts
+export class CreateDto {
+    name: string;
+    age: number;
+    breed: string;
+}
+```
+
+Dùng nó trong controller
+```ts
+@Post()
+async create(@Body( createDto: CreateDto)) {
+    return 'This action adds a new cat';
+}
+```
+
+## Handdling error
+
+Có một chương riêng về xử lý lỗi [here][handdle-error].
+
+# Full resource sampel (Toàn bộ tài nguyên mẫu)
+
+Một số ví dụ sử dụng decorator sẵn -> tạo base controller. Controller này đưa ra một số phương pháp để access vào thao tác dữ liệu nội bộ.
+
+```ts
+import { Controller, Get, Query, Post, Body, Put, Param, Delete } from '@nestjs/common';
+import { CreateCatDto, UpdateCatDto, ListAllEntities } from './dto';
+
+@Controller('cats')
+export class CatsController {
+  @Post()
+  create(@Body() createCatDto: CreateCatDto) {
+    return 'This action adds a new cat';
+  }
+
+  @Get()
+  findAll(@Query() query: ListAllEntities) {
+    return `This action returns all cats (limit: ${query.limit} items)`;
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return `This action returns a #${id} cat`;
+  }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() updateCatDto: UpdateCatDto) {
+    return `This action updates a #${id} cat`;
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return `This action removes a #${id} cat`;
+  }
+}
+```
+
+## Getting up and running
+
+Nest không biết controller tồn tại -> cần khai báo controllers trong @Module()
+
+```ts
+// app.module.ts
+import { Module } from '@nestjs/common';
+import { CatsController } from './cats/cats.controller';
+
+@Module({
+  controllers: [CatsController],
+})
+export class AppModule {}
+```
+
+## Appendix: Library-specific approach
+
+Sử dụng **response object** dành riêng cho lib -> use @Res() decorator
+
+```ts
+import { Controller, Get, Post, Res, HttpStatus } from '@nestjs/common';
+import { Response } from 'express';
+
+@Controller('cats')
+export class CatsController {
+  @Post()
+  create(@Res() res: Response) {
+    res.status(HttpStatus.CREATED).send();
+  }
+
+  @Get()
+  findAll(@Res() res: Response) {
+     res.status(HttpStatus.OK).json([]);
+  }
+}
+```
+
+Mặc dù cách tiếp cận này hoạt động và trên thực tế cho phép linh hoạt hơn theo một số cách bằng cách cung cấp toàn quyền kiểm soát đối tượng phản hồi (thao tác tiêu đề, các tính năng dành riêng cho thư viện, v.v.), nó nên được sử dụng cẩn thận. Nhìn chung, cách tiếp cận này kém rõ ràng hơn nhiều và có một số nhược điểm. Những bất lợi chính là bạn mất khả năng tương thích với các tính năng Nest phụ thuộc vào việc xử lý phản hồi tiêu chuẩn của Nest, chẳng hạn như Bộ chặn và trình @HttpCode()trang trí. Ngoài ra, mã của bạn có thể trở nên phụ thuộc vào nền tảng (vì các thư viện cơ bản có thể có các API khác nhau trên đối tượng phản hồi) và khó kiểm tra hơn (bạn sẽ phải mô phỏng đối tượng phản hồi, v.v.).
+
+Do đó, phương pháp tiếp cận tiêu chuẩn Nest phải luôn được ưu tiên khi có thể. (Đoạn kết nên copy hết (+.+))
+
 [custom-decorators]: https://docs.nestjs.com/custom-decorators
+[scope]: https://docs.nestjs.com/fundamentals/injection-scopes
+[async]: https://kamilmysliwiec.com/typescript-2-1-introduction-async-await
+[ovservable-streams]: http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
+[handdle-error]: https://docs.nestjs.com/exception-filters
+
 

@@ -1,12 +1,14 @@
-import { Controller, Get, Req, Post, HttpCode, Header, Redirect, Query, Param } from '@nestjs/common';
+import { Controller, Get, Req, Post, HttpCode, Header, Redirect, Query, Param, Body } from '@nestjs/common';
 import { Request } from 'express';
+import { CreateCatDto } from 'src/dto/create-cat.dto';
 
 @Controller('cats')
 export class CatsController {
 
     @Post()
     @HttpCode(204)
-    create(): string {
+    create(@Body() createCatDto: CreateCatDto): string {
+        console.log(createCatDto)
         return 'This action adds a new cat';
     }
 
@@ -39,4 +41,10 @@ export class CatsController {
         console.log(params.id);
         return `This actionn returns a #${params.id} cat`;
     }
+
+    @Get(':id')
+    findOneTwo(@Param('id') id): string {
+        return `This action returns a #${id} cat`;
+    }
+
 }
