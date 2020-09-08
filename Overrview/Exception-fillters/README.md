@@ -1,6 +1,6 @@
 # Exception filters (Bộ lọc ngoại lệ)
 <p align="center">
-  <a href="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/exception.png" target="blank"><img src="https://github.com/LDK-VN/TypeScript/blob/master/resource/logo2.png" width="320" alt="Nest Logo" /></a>
+  <a href="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/exception.png" target="blank"><img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/exception.png" width="320" alt="Nest Logo" /></a>
 </p>
 
 Nest đi kèm -> **exception layer** -> handle all exception chưa được khắc phục trên app.
