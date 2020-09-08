@@ -28,6 +28,7 @@ export class CatsController {
 }
 ```
 
+<<<<<<< HEAD
 * Create a controller using the CLI
 ```bash
  @nest g controller cats`
@@ -45,6 +46,10 @@ Có 2 kiểu response
 Standard (recommended) | response -> obj, array js -> serialized về JSON . Tuy nhiên Nest chỉ send value mà không cố gắng serialize, còn lại Nest lo  => Xử lý phản hồi ez, 
 
 Library-specific (thư việc cụ thể) | ex: express -> @Res() in method (findAll(@Res)() reponse) -> có khả năng sử dụng các phương pháp xử lý phản hồi "response.status(200).send()"
+=======
+```
+Create a controller using the CLI -> `@nest g controller cats`
+>>>>>>> 1f24d6c9d9123777522627d0cd55f4f9d19641e3
 ```
 
 * Không thể dùng cả 2 cách cùng lúc. Nest biết -> handler dùng @Res() hay @Next() -> cho biết đó là tuỳ chọn dành riêng cho lib. -> Dùng 2 cách => standard disable
