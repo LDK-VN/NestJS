@@ -39,7 +39,7 @@ Function **HttpException** -> 2 parameter
 
 Default JSON response body -> 2 properties:
 * statusCode: default HTTP status code dk cung cấp trong status argument
-* message: Mô tả ngắn gọn về error HTTP dự trên **status**
+* message: Mô tả ngắn gọn về error HTTP dựa trên **status**
 
 Ghi đè content JSON response -> cung cấp chuỗi trong **response** argument
 Ghi đè toàn bộ content JSON response -> truyền obj vào **response** argument
