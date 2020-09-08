@@ -19,7 +19,7 @@ Có thể coi providers from a module là module's public interface,or API.
 
 ## Feature modules
 
-Đơn giản là "organizes code relevant" (Tổ chức mã phù hợp) với mọt function cụ thể -> keep code organized và establishing clear boundaries (thiết lập danh giới rõ ràng) => Quản lý sự phức tạp  + phát triển với nguyên tắc SOLID đăc biệt -> quy mô app tăng.
+Đơn giản là "organizes code relevant" (Tổ chức mã phù hợp) với một function cụ thể -> keep code organized và establishing clear boundaries (thiết lập danh giới rõ ràng) => Quản lý sự phức tạp  + phát triển với nguyên tắc SOLID đăc biệt -> quy mô app tăng.
 
 ```ts
 // cats/cats.module.ts
