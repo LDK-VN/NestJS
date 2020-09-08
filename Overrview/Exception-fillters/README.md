@@ -85,25 +85,25 @@ export class ForbiddenException extends HttpException {
 
 Cung cấp tập ngoại lệ tiêu chuẩn kế thừa từ **HttpException**
 
-    *BadRequestException
-    *UnauthorizedException
-    *NotFoundException
-    *ForbiddenException
-    *NotAcceptableException
-    *RequestTimeoutException
-    *ConflictException
-    *GoneException
-    *HttpVersionNotSupportedException
-    *PayloadTooLargeException
-    *UnsupportedMediaTypeException
-    *UnprocessableEntityException
-    *InternalServerErrorException
-    *NotImplementedException
-    *ImATeapotException
-    *MethodNotAllowedException
-    *BadGatewayException
-    *ServiceUnavailableException
-    *GatewayTimeoutException
+   *BadRequestException
+   *UnauthorizedException
+   *NotFoundException
+   *ForbiddenException
+   *NotAcceptableException
+   *RequestTimeoutException
+   *ConflictException
+   *GoneException
+   *HttpVersionNotSupportedException
+   *PayloadTooLargeException
+   *UnsupportedMediaTypeException
+   *UnprocessableEntityException
+   *InternalServerErrorException
+   *NotImplementedException
+   *ImATeapotException
+   *MethodNotAllowedException
+   *BadGatewayException
+   *ServiceUnavailableException
+   *GatewayTimeoutException
 
 ## Exception filters
 
