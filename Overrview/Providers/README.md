@@ -126,6 +126,9 @@ export class AppModule {}
 
 Và đây là directory structure:
 
+<p align="center">
+  <a href="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/Components_1.png" target="blank"><img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/Components_1.png" width="860" alt="Nest Logo" /></a>
+</p>
 
 ## Manual instantitation
 
