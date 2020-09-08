@@ -5,6 +5,7 @@ import { Cat } from 'src/interfaces/cat.interface';
 
 @Controller('cats')
 export class CatsController {
+    
     constructor(private catService: CatsService) {}
 
     @Post()
