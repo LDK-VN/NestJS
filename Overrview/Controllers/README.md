@@ -8,7 +8,7 @@ A Controllers -> mục địch -> nhận yêu cầu cụ thể cho ứng dụng
 
 **Routing** kiểm soát controller -> nhận được request nào. Thường mỗi controller > 1 route và routes có thể thực hiện hành động khác nhau
 
-Use classes and **decorators**. Decorator liên kết classes với required metadata(siêu dữ liệu bắt buộc) vàcho phép  Nest tạo routing map (Liên kết request với controller tương ứng).
+Use classes and **decorators**. Decorator liên kết classes với required metadata(siêu dữ liệu bắt buộc) và cho phép  Nest tạo routing map (Liên kết request với controller tương ứng).
 
 ## Routing
 
