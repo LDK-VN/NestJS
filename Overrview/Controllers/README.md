@@ -89,5 +89,114 @@ Nếu sử dụng lib -> response management -> cal **response** object (res.jso
 Tìm hiểu create, [custom decorators][custom-decorators]
 ```
 
+## Resources
+
+```ts
+
+// cat.controller.ts
+
+import { Controller, Get, Post } from '@nestjs/common';
+
+@Controller('cats')
+export class CatsController {
+  @Post()
+  create(): string {
+    return 'This action adds a new cat';
+  }
+
+  @Get()
+  findAll(): string {
+    return 'This action returns all cats';
+  }
+}
+```
+
+HTTP endpoint  tiêu chuẩn: @Put(), @Delete(), @Patch, @Options(), @Head(), @All()
+
+## Route wildcarrds
+
+```ts
+@Get('ab*cd')
+findAll() {
+    return 'This route uses a wildcard';
+}
+```
+
+'ab*cd' -> abcd, ab_cd, abbecd,etc. Characters ?,+,*,() có thể được sử dụng in subsets.(-),(.) -> string-báed paths.
+
+## Status code
+
+Change status code.
+
+```ts
+@Post()
+@HttpCode(204)
+create() {
+  return 'This action adds a new cat';
+}
+```
+
+```
+Import HttpCode from the @nestjs/common package.
+```
+Thường mã trạng thái không static -> phụ thuộc vào các yếu tố khác nhau -> có thể dùng response object dành riêng cho lib (ịnect @Res()) (Hoặc, trong case error -> throw)
+
+## Headers
+
+Chỉ định response header -> @Header() decorator or library-specific response object(res.header()).
+```ts
+@Post()
+@Header('Cache-Control', 'none')
+create() {
+  return 'This action adds a new cat';
+}
+```
+
+```
+Import Header from the @nestjs/common package.
+```
+
+## Redirection (Chuyển hướng)
+
+redirect URL -> @Redirect() or a library-specific response object (res.redirect()).
+
+@Redirect() nhận required **url** argument, và optional **statusCode** argument default 302 (Found) nếu bị bỏ qua.
+```ts
+@Get()
+@Redirect('https://nestjs.com', 301)
+```
+
+Muốn xác định HTTP status code or the redirect URL dynamically -> returning object  from the route handler method with the shape
+```ts
+{
+  "url": string,
+  "statusCode": number
+}
+```
+
+Returns value -> override any argument được chuyển đến @Redirect()
+```ts
+@Get('docs')
+@Redirect('https://docs.nestjs.com', 302)
+getDocs(@Query('version') version) {
+    if (version && version === '5') {
+        return { url: 'https://docs.nestjs.com/v5/' };
+    }
+}
+```
+
+## Route parameters
+
+Dynamic data -> route parameters in @Get() decorator and access with @Param() decorator.
+```ts
+@Get(':id')
+findOne(@Param() params): string {
+  console.log(params.id);
+  return `This action returns a #${params.id} cat`;
+}
+```
+```
+Import Param from the @nestjs/common package.
+```
 [custom-decorators]: https://docs.nestjs.com/custom-decorators
 
