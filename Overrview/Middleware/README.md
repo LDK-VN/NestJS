@@ -4,6 +4,11 @@
 * Have access to the **request** and **response** object, and the **next()** middleware function -> application's request-response cycle
 * The **next()** middleware function -> variable name **next**
 
+
+<p align="center">
+  <a href="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/middleware.png" target="blank"><img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/middleware.png" width="860" alt="middleware" /></a>
+</p>
+
 ### Chức năng
 
 * execute any code.
