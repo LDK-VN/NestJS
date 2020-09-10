@@ -4,9 +4,22 @@ import { AppService } from './app.service';
 import { CatsController } from './cats/cats.controller';
 import { CatsService } from './cats/cats.service';
 
+const mockCatsService = {
+  /* mock implementation
+  ...
+  */
+ 'CONNECTION' : CatsService
+};
+
+
 @Module({
   imports: [],
   controllers: [AppController, CatsController],
-  providers: [AppService, CatsService],
+  providers: [
+    {
+      provide: 'CONNECTION',
+      useValue: mockCatsService,
+    },
+    AppService],
 })
 export class AppModule {}
