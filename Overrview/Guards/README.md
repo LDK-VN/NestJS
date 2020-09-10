@@ -6,7 +6,6 @@
   <a href="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/guards.png" target="blank"><img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/guards.png" width="860" alt="guards" /></a>
 </p>
 
-
 Single responsibility (Trách nhiệm duy nhất) -> Check request có được handled bởi route handler hay không -> phụ thuộc permissions, roles, ACLs,etc -> hiện có tại run-time.
 
 This have access **ExecutionContext** instance -> biết điều gì sẽ xảy ra tiếp theo.
