@@ -9,6 +9,11 @@ import { CastControllerLibController } from './cats/cast-controller-lib.controll
 @Module({
   imports: [],
   controllers: [AppController, CatsController, CastTwoController, CatsFullResourceSampleController, CastControllerLibController],
-  providers: [AppService],
+  providers: [
+    {
+      provide: AppService,
+      useClass: AppService
+    }
+  ],
 })
 export class AppModule {}

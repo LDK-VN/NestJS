@@ -122,7 +122,7 @@ const mockCatsService = {
 export class AppModule {}
 ```
 
-## Non-class-based provider tokens ( Mã thông báo nhà cung cấp không dựa trên class)
+## Non-class-based provider tokens (Mã thông báo nhà cung cấp không dựa trên class)
 
 In this example -> **CatsService** token -> resolve (phân giải) -> **mockCatsService** mock object.
 
@@ -261,3 +261,4 @@ const connnectionFactory = {
 })
 export class AppModule {}
 ```
+
