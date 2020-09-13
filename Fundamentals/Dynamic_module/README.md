@@ -118,7 +118,7 @@ export class ConfigService {
 }
 ```
 
-Đơn giản hơn -> 'CONFIG_OPTIONS' -> là hằng số trong 1 files riêng biệt
+Đơn giản hơn -> 'CONFIG_OPTIONS' -> là hằng số trong 1 file riêng biệt
 
 ```ts
 export const CONFIG_OPTIONS = 'CONFIG_OPTIONS';
