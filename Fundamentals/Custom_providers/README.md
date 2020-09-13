@@ -83,7 +83,7 @@ The **providers** property takes an array of **providers**  (Tài sản của m�
 
 Supplied (cung cấp) providers thông qua list of class name (danh sách tên các lớp).
 
-Syntax **provviders: [CatsService] -> more complete synxtax (cú pháp hoàn chỉnh hơn)
+Syntax provviders: [CatsService] -> more complete synxtax (cú pháp hoàn chỉnh hơn)
 
 ```ts
 providers: [
