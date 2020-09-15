@@ -6,7 +6,8 @@ Sample project [here][here]
 
 ## Authentication requirements (Yêu cầu xác thực)
 
-Authentication -> username + password => JWT -> token -> uỷ quyền
+Authentication -> username + password => JWT -> dạng token -> uỷ quyền request tiếp (được bảo vệ, chỉ có thể truy cập khi JWT hợp lệ)
+
 
 Cài đặt package cần thiết
 
