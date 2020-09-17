@@ -152,14 +152,14 @@ const dbConfig = this.configService.get<DatabaseConfig>('database');
 const port = dbConfig.port;
 ```
 
-Trả về giá trị mặc định nếu không tồn vại key
+Trả về giá trị mặc định nếu không tồn tại key
 
 ```ts
 // Sử dụng "localhost" khi "database.host" không xác định
 const dbHost = this.configService.get<string>('database.host', 'localhost');
 ```
 
-Có optional generic (type argument) ngăn truy cạp thuộc tính không tồn tại
+Có optional generic (type argument) ngăn truy cập thuộc tính không tồn tại
 
 ```ts
 interface EnviromentVariables {
