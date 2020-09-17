@@ -2,7 +2,7 @@
 
 Dùng để inject dependencies -> các obj có thể toạ nhiều quan hệ -> wiring up các cá thể của đối tượng phần lớn có thể được ủy quyền cho Nest runtime system.
 
-Provider đơn giản là class + @Ijnectable decorator
+Provider đơn giản là class + @Injectable decorator
 
 <p align="center">
   <a href="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/Components_1.png" target="blank"><img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/Components_1.png" width="860" alt="Nest Logo" /></a>
