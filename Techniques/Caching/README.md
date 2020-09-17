@@ -210,4 +210,4 @@ CacheModule.registerAsync({
 });
 ```
 
-Hoạt động của nó như **useClass**. Tuy nhiên **CacheModule** nó sẽ tìm các module đã import để sử dụng lại bất kỳ modul nào đã được tạo thay vì khởi tạo module chính nó.
+Hoạt động của nó như **useClass**. Tuy nhiên **CacheModule** nó sẽ tìm các module đã import để sử dụng lại bất kỳ module nào đã được tạo thay vì khởi tạo module chính nó.
