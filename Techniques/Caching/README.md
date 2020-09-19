@@ -8,7 +8,7 @@ Một ví dụ về sự khác biệt khi sử dụng caching
 <img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/no_caching.png"></img>
 
 * Caching
-<img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/caching.png"></img>
+<img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/Caching.png"></img>
 
 ## Installition
 
