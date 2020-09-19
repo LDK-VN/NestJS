@@ -4,6 +4,8 @@ Kỹ thuật đơn giản, cải thiện hiệu suất. Nó như kho lưu trữ 
 
 Một ví dụ về sự khác biệt khi sử dụng caching
 
+<img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/Caching.png"></img>
+
 ## Installition
 
 ```bash
