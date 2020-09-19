@@ -88,6 +88,8 @@ role: RoleEntity;
 
 Sử đổi hành vi mặc định của các hàm chuyển đổi. Ghi đè cài đặt default -> chuyển chúng vào trong **options** object bằng **@SerializaOptions()** decorator.
 
+Ví dụ này loại bỏ tất cả property bắt đầu bằng dấu '_'.
+
 ```ts
 @SerializeOptions({
   excludePrefixes: ['_'],
