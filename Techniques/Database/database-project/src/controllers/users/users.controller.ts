@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, CacheInterceptor, Controller, Delete, Get, Param, Post, UseInterceptors } from '@nestjs/common';
 import { CreateUserDto } from '../../dto/create-user.dto';
 import { User } from '../../db/entities/user.entity';
 import { UsersService } from './users.service';

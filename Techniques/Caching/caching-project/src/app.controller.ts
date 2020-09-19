@@ -4,16 +4,10 @@ import { AppService } from './app.service';
 @Controller()
 @UseInterceptors(CacheInterceptor)
 export class AppController {
-  public number = []
-  constructor(private readonly appService: AppService) {
-    
-  }
+  constructor(private readonly appService: AppService) {}
 
   @Get()
-  findAll() : string[]{  
-
-    return [
-
-    ];
+  findAll(){  
+    return [{ id: 1, name: 'Nest' }];
   }
 }

@@ -1,12 +1,12 @@
-import { Module } from '@nestjs/common';
+import { CacheInterceptor, CacheModule, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './controllers/users/users.module';
-import { PhotosController } from './controllers/photos/photos.controller';
 import { PhotosModule } from './controllers/photos/photos.module';
 import { Photo } from './db/entities/photo.entity';
 import { User } from './db/entities/user.entity';
+import { APP_INTERCEPTOR } from '@nestjs/core';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -21,9 +21,12 @@ import { User } from './db/entities/user.entity';
     synchronize: true,
   }),
   UsersModule,
-  PhotosModule
+  PhotosModule,
+  CacheModule.register()
 ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,
+    {provide: APP_INTERCEPTOR, useClass: CacheInterceptor}
+  ],
 })
 export class AppModule {}

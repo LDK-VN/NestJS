@@ -33,8 +33,8 @@ export class UsersService {
         return this.usersRepository.find();
     }
 
-    findOne(id: string): Promise<User> {
-        return this.usersRepository.findOne(id);
+    findOne(id: string): Promise<any> {
+        return this.usersRepository.findOne(id, {relations:["photos"]});
     }
 
     async remove(id: string): Promise<void> {

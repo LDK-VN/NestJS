@@ -12,6 +12,6 @@ export class PhotoSubscriber implements EntitySubscriberInterface<Photo> {
     }
 
     beforeInsert(event: InsertEvent<Photo>) {
-        console.log(`Before user inserted`, event.entity);
+        console.log(`Before photo inserted`, event.entity);
     }
 }
