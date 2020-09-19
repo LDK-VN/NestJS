@@ -1,6 +1,6 @@
 # Caching
 
-<img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/aching.png"/>
+<img src="https://github.com/LDK-VN/NestJS/blob/master/Resource/image/caching.png"/>
 
 Kỹ thuật đơn giản, cải thiện hiệu suất. Nó như kho lưu trữ tạm thời cung cấp khả năng truy cập dữ liệu hiệu suất cao.
 
