@@ -1,4 +1,4 @@
-import { Body, CacheInterceptor, Controller, Delete, Get, Param, Post, UseInterceptors } from '@nestjs/common';
+import { Body, CacheInterceptor, CacheKey, CacheTTL, Controller, Delete, Get, Param, Post, UseInterceptors } from '@nestjs/common';
 import { CreateUserDto } from '../../dto/create-user.dto';
 import { User } from '../../db/entities/user.entity';
 import { UsersService } from './users.service';
@@ -23,6 +23,8 @@ export class UsersController {
     }
 
     @Get(':id')
+    @CacheKey('custom_key')
+    @CacheTTL(10)
     findOne(@Param('id') id: string): Promise<User> {
         return this.usersService.findOne(id);
     }

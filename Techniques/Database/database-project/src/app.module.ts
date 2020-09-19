@@ -22,9 +22,10 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
   }),
   UsersModule,
   PhotosModule,
-  CacheModule.register({
-    ttl: 5, // seconds
-    max: 10, // maximum number of items in cache
+  CacheModule.registerAsync({
+    useFactory: () => ({
+      ttl:5
+    })
   })
 ],
   controllers: [AppController],
