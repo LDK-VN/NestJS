@@ -157,3 +157,72 @@ definitionsFactory.generate({
 });
 ```
 
+## Accessing generated schema (Truy cập lược đồ đã tạo)
+
+Sử dụng **GraphQLSchemaHost** class:
+
+```ts
+const { schema } = app.get(GraphQlSchemaHost);
+```
+
+```diff
+!Chú ý
+Bạn phải gọi GraphQLSchemaHost#schemagetter sau khi ứng dụng đã được khởi tạo (sau khi onModuleInithook được kích hoạt bởi app.listen()hoặc app.init()method).
+```
+
+## Async configuration (Cấu hình không đồng bộ)
+
+Sử dụng **forRootAsync()** method
+
+
+Một số kỹ thuật sử dụng factory
+
+```ts
+GraphQLModule.forRootAsync({
+  useFactory: () => ({
+    typePaths: ['./**/*.graphql'],
+  }),
+}),
+```
+
+Có thể sử dụng **async** và **inject**
+
+```ts
+GraphQLModule.forRootAsync({
+  imports: [ConfigModule],
+  useFactory: async (configService: ConfigService) => ({
+    typePaths: configService.getString('GRAPHQL_TYPE_PATHS'),
+  }),
+  inject: [ConfigService],
+}),
+```
+
+Sử dụng class thay vì factory
+
+```ts
+GraphQLModule.forRootAsync({
+  useClass: GqlConfigService,
+}),
+```
+
+Tạo file **GqlConfigService** trong **GrapQLModule** và implement **GqlOptionsFactory** interface.
+
+```ts
+@Injectable()
+class GqlConfigService implements GqlOptionsFactory {
+  createGqlOptions(): GqlModuleOptions {
+    return {
+      typePaths: ['./**/*.graphql'],
+    };
+  }
+}
+```
+
+Sử dụng lại nhà cung cấp hiện tại -> useExisting syntax
+
+```ts
+GraphQLModule.forRootAsync({
+  imports: [ConfigModule],
+  useExisting: ConfigService,
+}),
+```
